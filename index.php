@@ -30,9 +30,11 @@
   </head>
   <body class="goto-here">
 
-    <?php
-      include "navbar.php";
-     ?>
+
+        <?php
+          include "navbar.php";
+         ?>
+
 
     <section id="home-section" class="hero">
 		  <div class="home-slider owl-carousel">
@@ -129,7 +131,7 @@
 									<div class="text text-center">
 										<h2>Vegetables</h2>
 										<p>Protect the health of every home</p>
-										<p><a href="#" class="btn btn-primary">Shop now</a></p>
+										<p><a href="shop.php" class="btn btn-primary">Shop now</a></p>
 									</div>
 								</div>
 							</div>
