@@ -5,11 +5,11 @@
         <div class="row d-flex">
           <div class="col-md pr-4 d-flex topper align-items-center">
             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-            <span class="text">+ 1235 2355 98</span>
+            <span class="text">+91 9909201529</span>
           </div>
           <div class="col-md pr-4 d-flex topper align-items-center">
             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-            <span class="text">youremail@email.com</span>
+            <span class="text">suhrad205@gmail.com</span>
           </div>
           <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
             <span class="text">3-5 Business days delivery &amp; Free Returns</span>
@@ -43,6 +43,8 @@
         <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
         <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+        <li class="nav-item"><a href="Login.php" class="nav-link">Log in/Sign up</a></li>
+
 
       </ul>
     </div>
