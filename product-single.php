@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once("config.php");
+$current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,35 +55,50 @@
 		    </div>
 		  </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.php">Vegefoods</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.php">Vegefoods</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-	          <li class="nav-item active dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.php">Shop</a>
-              	<a class="dropdown-item" href="wishlist.php">Wishlist</a>
-                <a class="dropdown-item" href="product-single.php">Single Product</a>
-                <a class="dropdown-item" href="cart.php">Cart</a>
-                <a class="dropdown-item" href="checkout.php">Checkout</a>
-              </div>
-            </li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.php">Shop</a></li>
+         
+        <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+		<li class="nav-item"><a class="nav-link" href="cart_viewvik.php">Cart</a></li>
 
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+		<li>
+		<?php
+						if(isset($_SESSION['loginUser']))
+						{
+							$uemail=$_SESSION['loginUser'];
+							echo "</li>
+        <li class=\"nav-item\"><a href=\"changePass.php\" class=\"nav-link\">Change Password</strong></a></li>
+								<li class=\"nav-item\"><a href=\"index.php?logout=1\" class=\"nav-link\">LOGOUT</a></li>
+								</li>";
+						}
+						else
+						{
+							echo "
+        <li class=\"nav-item\"><a href=\"index_login.html\" class=\"nav-link\">Login</a></li>
+							<li class=\"nav-item\"><a href=\"index_signup.html\" class=\"nav-link\">Signup</a></li>
+							</li>";
+						}
+					?>
+			</li>
+			
+
+        
+
+      </ul>
+    </div>
+  </div>
+</nav>
     <!-- END nav -->
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">

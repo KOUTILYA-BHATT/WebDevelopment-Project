@@ -1,14 +1,28 @@
 <?php
 session_start();
-include_once("config.php");
+include_once("config1.php");
 $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 ?>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Vegefoods</title>
+<html>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Welcome to Shopping mart</title>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Fontawesome core CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!--GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--Slide Show Css -->
+    <link href="assets/ItemSlider/css/main-style.css" rel="stylesheet" />
+    <!-- custom CSS here -->
+    <link href="assets/css/style.css" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
@@ -32,9 +46,9 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="goto-here">
-    <div class="py-1 bg-primary">
+</head>
+<body>
+	<div class="py-1 bg-primary">
   <div class="container">
     <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
       <div class="col-lg-12 d-block">
@@ -55,7 +69,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
     </div>
   </div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
   <div class="container">
     <a class="navbar-brand" href="index.php">Vegefoods</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,26 +85,10 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
         <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
 		<li class="nav-item"><a class="nav-link" href="cart_viewvik.php">Cart</a></li>
+		<li class="nav-item"><a href="index_signup.html" class="nav-link">Signup</a></li>
 
-		<li>
-		<?php
-						if(isset($_SESSION['loginUser']))
-						{
-							$uemail=$_SESSION['loginUser'];
-							echo "</li>
-        <li class=\"nav-item\"><a href=\"changePass.php\" class=\"nav-link\">Change Password</strong></a></li>
-								<li class=\"nav-item\"><a href=\"index.php?logout=1\" class=\"nav-link\">LOGOUT</a></li>
-								</li>";
-						}
-						else
-						{
-							echo "
-        <li class=\"nav-item\"><a href=\"index_login.html\" class=\"nav-link\">Login</a></li>
-							<li class=\"nav-item\"><a href=\"index_signup.html\" class=\"nav-link\">Signup</a></li>
-							</li>";
-						}
-					?>
-			</li>
+
+
 			
 
         
@@ -100,53 +98,48 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
   </div>
 </nav>
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Products</span></p>
-            <h1 class="mb-0 bread">Products</h1>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <h1 align="center">Browse Categories</h1>
 
-               <?php
-			   $mysqli = new mysqli("localhost","root","","project");
-$results = $mysqli->query("SELECT * FROM product_categories ORDER BY id ASC");
-if($results){ 
-$products_item = '<ul class="products">';
-while($obj = $results->fetch_object())
-{
-$products_item .= <<<EOT
+
+	<div class="col-md-4 text-center col-sm-6 col-xs-6">
+        
+	</div>
 	<div class="col-md-4 text-center col-sm-6 col-xs-6">
         <div class="thumbnail product-box">
-			<h3><a href="#">{$obj->cat_name}</a></h3>
-			<img src="images/{$obj->image}">
-			<p><font color='blue'>{$obj->description}<font></p>
-			
-			<p><a href="cat_fruit.php?tableName={$obj->cat_select}" class="btn btn-success" role="button">Shop</a>
+			<strong style="font-size:30px">Log In</strong>
+			<br/>
+			 <form method="POST" action="mylogin.php">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" required="required" placeholder="Email" id="email1" name="email1">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control" required="required" placeholder="Password" id="pass1" name="pass1">
+                            </div>
+                        </div>
+                    </div>
+					<div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-group">
+							<div class="form-group">
+                                <button type="submit" class="btn btn-primary" style="font-size:20px">Submit Request</button>
+                            </div>
+							</div>
+						</div>
+					</div>
+					
+                </form>
+				<a href="ForgotPassword.php" style="font-size:30px">Forgot Password</a>
 		</div>
 	</div>
 	
-	
-	
-EOT;
-}
-$products_item .= '</ul>';
-echo $products_item;
-}
-?>    
-    <?php
+	<?php
       include "footer.php";
-     ?>
-
-
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    ?>
+	 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
   <script src="js/jquery.min.js"></script>
@@ -166,5 +159,5 @@ echo $products_item;
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
-  </body>
-</html>
+ 
+</body>

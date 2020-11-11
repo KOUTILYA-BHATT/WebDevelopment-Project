@@ -1,13 +1,28 @@
 <?php
 session_start();
-include_once("config.php");
+include_once("config1.php");
 $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-?><!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
+?>
+<!DOCTYPE html>
+<html>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Welcome to Shopping mart</title>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Fontawesome core CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!--GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--Slide Show Css -->
+    <link href="assets/ItemSlider/css/main-style.css" rel="stylesheet" />
+    <!-- custom CSS here -->
+    <link href="assets/css/style.css" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
@@ -31,10 +46,9 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="goto-here">
-
-<div class="py-1 bg-primary">
+</head>
+<body>
+	<div class="py-1 bg-primary">
   <div class="container">
     <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
       <div class="col-lg-12 d-block">
@@ -55,7 +69,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
     </div>
   </div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
   <div class="container">
     <a class="navbar-brand" href="index.php">Vegefoods</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +98,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 						}
 						else
 						{
-							echo "</li>
+							echo "
         <li class=\"nav-item\"><a href=\"index_login.html\" class=\"nav-link\">Login</a></li>
 							<li class=\"nav-item\"><a href=\"index_signup.html\" class=\"nav-link\">Signup</a></li>
 							</li>";
@@ -99,79 +113,17 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
     </div>
   </div>
 </nav>
-
-
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Contact us</span></p>
-            <h1 class="mb-0 bread">Contact us</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <section class="ftco-section contact-section bg-light">
-      <div class="container">
-      	<div class="row d-flex mb-5 contact-info">
-          <div class="w-100"></div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Address : </span>Chitra GIDC, Plot no.198, "Aashirwad", Bhavnagar, Gujarat, India</p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Phone : </span> <a href="tel://1234567920">+91 9909201529</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Email : </span> <a href="mailto:info@yoursite.com">suhrad205@gmail.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Website :</span> <a href="#">suhrad205.com</a></p>
-	          </div>
-          </div>
-        </div>
-        <div class="row block-9">
-          <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-white p-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
-
-          </div>
-
-          <div class="col-md-6 d-flex">
-          	<div id="map" class="bg-white"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-  <!-- loader -->
-  <?php
-    include "footer.php";
-   ?>
-
-
-  </body>
-</html>
+	<div class="col-md-4 text-center col-sm-6 col-xs-6">
+        
+	</div>
+	<div class="col-md-4 text-center col-sm-6 col-xs-6">
+        <div class="thumbnail product-box">
+			 <form>
+                    <div class="row">
+                        <p>Invalid Username/Password Or You Are not Verified<br><a href="index_login.html">Try Again</a></p>
+                    </div>
+		
+                </form>
+		</div>
+	</div>
+</body>
