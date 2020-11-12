@@ -1,3 +1,24 @@
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 <div class="py-1 bg-primary">
   <div class="container">
     <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -43,8 +64,32 @@
         <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
         <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-        <li class="nav-item"><a href="Login.php" class="nav-link">Log in/Sign up</a></li>
+		<li>
+		<?php
+						if(isset($_SESSION['loginUser']))
+						{
+							$uemail=$_SESSION['loginUser'];
+							$query="select Firstname from users where Email='$uemail'";
+							$result=mysqli_query($dbc,$query) or die(mysql_error());
+							$fname=mysqli_fetch_array($result,MYSQLI_ASSOC);
+							$fname=$fname["Firstname"];
+							echo "</li>
+        <li class=\"nav-item\"><a href=\"changePass.php\" class=\"nav-link\">Change Password</strong></a></li>
+								<li class=\"nav-item\"><a href=\"index.php?logout=1\" class=\"nav-link\">LOGOUT</a></li>
+								</li>";
+						}
+						else
+						{
+							echo "</li>
+        <li class=\"nav-item\"><a href=\"index_login.html\" class=\"nav-link\">Login</a></li>
+							<li class=\"nav-item\"><a href=\"index_signup.html\" class=\"nav-link\">Signup</a></li>
+							</li>";
+						}
+					?>
+			</li>
+			
 
+        
 
       </ul>
     </div>

@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once("config.php");
+$current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,6 +34,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="goto-here">
+
     <?php
       include "navbar.php";
      ?>
