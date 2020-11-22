@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2020 at 01:07 PM
+-- Generation Time: Nov 22, 2020 at 01:33 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -43,6 +43,13 @@ CREATE TABLE `userinfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `userinfo`
+--
+
+INSERT INTO `userinfo` (`user_id`, `user_name`, `user_email`, `user_password`, `user_mobile`, `user_bdate`, `user_gender`, `user_address`, `user_type`, `user_sa`, `user_dac`, `user_laa`) VALUES
+(20, 'Koutilya Bhatt', 'koutilya@gmail.com', '123', 7485961425, '2000-09-20', 1, 'guess you can write anything here', 1, 'blue', '2020-11-22 18:00:13', '2020-11-22 18:00:13');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -62,7 +69,7 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'This is an auto-increment field to uniquely identify the user.', AUTO_INCREMENT=20;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'This is an auto-increment field to uniquely identify the user.', AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

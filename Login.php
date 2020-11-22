@@ -21,6 +21,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	  $_SESSION['uid'] = $row['user_id'];
 		$_SESSION['uname'] = $row['user_name'];
 
+    $sql1 = "UPDATE userinfo SET user_laa = current_timestamp() WHERE userinfo.user_id = $_SESSION[uid]";
+    $result = mysqli_query($conn, $sql);
+
 		if($row['user_type'] == 0) // 0 for admin
 		  header("Location:index_admin.php");
 		else if ($row['user_type'] == 1){ // other users

@@ -90,7 +90,7 @@ if(!isset($_SESSION['uid'])){
         else{
         echo'<li class="nav-item"><a href="Logout.php" class="nav-link">Log out</a></li>
              <li class="nav-item"><a class="nav-link">'. $_SESSION['uname'] .'</a></li>
-             <img  src="images/profile_photos/'.$_SESSION['uid'].'.jpg" alt="profile image" style="margin-left:20px;width:50px;height:50px;border-radius:50%;">';
+             <img  src="images/profile_photos/'.$_SESSION['uid'].'.jpg" alt=""images/profile_photos/default.jpg" style="margin-left:20px;width:50px;height:50px;border-radius:50%;">';
       }
         ?>
 
